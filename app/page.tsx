@@ -1,6 +1,7 @@
 import styles from "./page.module.css";
 import Button from "@mui/material/Button";
-import { Box } from "@mui/material";
+import { Box, Typography } from "@mui/material";
+import Navbar from "./components/Navbar";
 
 export default function Home() {
   return (
@@ -16,7 +17,9 @@ export default function Home() {
           backgroundSize: "cover",
           backgroundPosition: "center",
         }}
-      ></Box>
+      >
+        <Navbar />
+      </Box>
 
       {/* About */}
       <Box
