@@ -17,7 +17,7 @@ const Navbar = () => {
   return (
     <AppBar
       position="static"
-      sx={{ background: "transparent", boxShadow: "none", pt: "16px" }}
+      sx={{ background: "transparent", boxShadow: "none", pt: "32px" }}
     >
       <Toolbar>
         {/** LOGO */}
@@ -44,7 +44,7 @@ const Navbar = () => {
               </Button>
             ))}
 
-            {/** Language Selector TODO Perhaps change to Menu component?
+            {/** Language Selector TODO Perhaps change to Menu
              */}
             <Hidden mdDown>
               <Button color="inherit">

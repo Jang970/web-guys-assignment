@@ -1,13 +1,17 @@
 import styles from "./page.module.css";
 import Button from "@mui/material/Button";
-import { Box, Typography } from "@mui/material";
+import { Box, Grid, Typography } from "@mui/material";
 import Navbar from "./components/Navbar";
+import CustomButton from "./components/CustomButton";
 
 export default function Home() {
   return (
     <main className={styles.main}>
       {/* Landing Page */}
-      <Box
+      <Grid
+        container
+        direction="column"
+        justifyContent="flex-start"
         sx={{
           height: "100vh",
           margin: 0,
@@ -18,8 +22,63 @@ export default function Home() {
           backgroundPosition: "center",
         }}
       >
-        <Navbar />
-      </Box>
+        <Grid item>
+          <Navbar />
+        </Grid>
+        {/** Add 120px padding & main content section */}
+
+        {/** SEA IT ALL TEXT */}
+        <Grid
+          item
+          sx={{
+            px: "30px",
+            width: { xs: "100vw", md: "613px" },
+          }}
+          mt="120px"
+          flexGrow="1"
+        >
+          <Typography
+            variant="h5"
+            sx={{ fontSize: { xs: "16px", md: "24px" } }}
+            color="white"
+          >
+            SEA IT ALL
+          </Typography>
+          <Typography
+            variant="h2"
+            color="white"
+            sx={{ fontSize: { xs: "48px", md: "60px" } }}
+          >
+            MULTIBEAM SONAR PRODUCTS & SOLUTIONS.
+          </Typography>
+        </Grid>
+
+        {/** WASSP text and contact button  */}
+        {/**TODO: Fix on smaller screens!! */}
+        <Grid
+          container
+          item
+          justifyContent="space-between"
+          alignItems="center"
+          sx={{ pr: "30px", pl: "600px", mb: "56px" }}
+        >
+          <Box>
+            <Typography color="white" sx={{ width: "220px" }}>
+              WASSP multi-beam enables sustainable fishing, exploration, and
+              surveys with versatility and detail.
+            </Typography>
+          </Box>
+          <Box>
+            <CustomButton
+              text="Contact Us"
+              imageSrc="/images/ArrowRight.svg"
+              imageAlt="arrow-right"
+              imageWidth={30}
+              imageHeight={30}
+            />
+          </Box>
+        </Grid>
+      </Grid>
 
       {/* About */}
       <Box
