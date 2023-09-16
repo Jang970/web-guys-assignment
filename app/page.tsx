@@ -33,7 +33,7 @@ export default function Home() {
           item
           sx={{
             px: "30px",
-            width: { xs: "450px", md: "613px" },
+            width: { xs: "370px", md: "613px" },
           }}
           mt="120px"
           flexGrow="1"
@@ -48,7 +48,7 @@ export default function Home() {
           <Typography
             variant="h2"
             color="white"
-            sx={{ fontSize: { xs: "48px", md: "60px" } }}
+            sx={{ fontSize: { xs: "42px", md: "60px" } }}
           >
             MULTIBEAM SONAR PRODUCTS & SOLUTIONS.
           </Typography>
@@ -125,9 +125,9 @@ export default function Home() {
         <Grid
           item
           sx={{
-            width: { xs: "370px", md: "820px" },
+            width: { xs: "400px", md: "820px" },
             zIndex: "1",
-            ml: { xs: "30px", md: "60px" },
+            ml: { xs: "16px", md: "60px" },
             mb: { xs: "16px", md: "30px" },
           }}
         >
@@ -145,7 +145,7 @@ export default function Home() {
             item
             container
             justifyContent="flex-start"
-            sx={{ width: { md: "820px" }, ml: { xs: "30px", md: "70px" } }}
+            sx={{ width: { md: "820px" }, ml: { xs: "16px", md: "70px" } }}
           >
             <Grid item sx={{ mr: { xs: "60px", md: "120px" } }}>
               <Typography sx={{ fontSize: { xs: "12px", md: "14px" } }}>
@@ -194,7 +194,7 @@ export default function Home() {
           <Grid
             item
             sx={{
-              ml: { xs: "30px", md: "470px" },
+              ml: { xs: "16px", md: "470px" },
               mt: { xs: "48px", md: "30px" },
             }}
           >
