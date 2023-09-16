@@ -54,21 +54,28 @@ export default function Home() {
         </Grid>
 
         {/** WASSP text and contact button  */}
-        {/**TODO: Fix on smaller screens!! */}
         <Grid
           container
           item
+          direction={{ xs: "column", lg: "row" }}
           justifyContent="space-between"
-          alignItems="center"
-          sx={{ pr: "30px", pl: "600px", mb: "56px" }}
+          alignItems={{ md: "flex-start", lg: "center" }}
+          sx={{
+            pr: "30px",
+            pl: { xs: "30px", lg: "600px" },
+            mb: "56px",
+          }}
         >
           <Box>
-            <Typography color="white" sx={{ width: "220px" }}>
+            <Typography
+              color="white"
+              sx={{ width: { xs: "270px", md: "220px" } }}
+            >
               WASSP multi-beam enables sustainable fishing, exploration, and
               surveys with versatility and detail.
             </Typography>
           </Box>
-          <Box>
+          <Box sx={{ pt: { xs: "48px", lg: "0px" } }}>
             <CustomButton
               text="Contact Us"
               imageSrc="/images/ArrowRight.svg"
