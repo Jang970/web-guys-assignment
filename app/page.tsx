@@ -1,9 +1,17 @@
 "use client";
 import styles from "./page.module.css";
-import { Box, Grid, Hidden, Typography } from "@mui/material";
+import {
+  Box,
+  Grid,
+  Hidden,
+  LinearProgress,
+  Typography,
+  Link,
+} from "@mui/material";
 import Navbar from "./components/Navbar";
 import CustomButton from "./components/CustomButton";
 import Image from "next/image";
+import CaptionTypography from "./components/CaptionTypography";
 
 export default function Home() {
   return (
@@ -211,7 +219,10 @@ export default function Home() {
       </Grid>
 
       {/* F-Series */}
-      <Box
+      <Grid
+        container
+        direction="column"
+        justifyContent="flex-end"
         sx={{
           height: "100vh",
           background:
@@ -220,7 +231,77 @@ export default function Home() {
           backgroundRepeat: "no-repeat",
           backgroundPosition: "center",
         }}
-      ></Box>
+      >
+        <Grid item></Grid>
+        <Grid container item sx={{ mb: "16px", px: "30px" }}>
+          {/** Title section */}
+          <Grid item flexGrow={1}>
+            <Grid item container direction="column">
+              <Grid item>
+                <Grid item container alignItems="center">
+                  <Grid item>
+                    <CaptionTypography text="01" fontSize="12px" />
+                  </Grid>
+                  <Grid item sx={{ width: "128px", mx: "8px" }}>
+                    <LinearProgress
+                      color="inherit"
+                      variant="determinate"
+                      sx={{ height: "2" }}
+                      value={30}
+                    />
+                  </Grid>
+                  <Grid item>
+                    <CaptionTypography text="03" fontSize="12px" />
+                  </Grid>
+                </Grid>
+              </Grid>
+
+              <Hidden mdDown>
+                <Grid item sx={{ my: "16px" }}>
+                  <CaptionTypography text="(FISHING SERIES)" fontSize="12px" />
+                </Grid>
+              </Hidden>
+
+              <Grid item>
+                <Typography variant="h3" sx={{ fontSize: "100px" }}>
+                  F - SERIES
+                </Typography>
+              </Grid>
+            </Grid>
+          </Grid>
+
+          {/** Info section */}
+          <Grid item>
+            <Grid
+              item
+              container
+              direction="column"
+              justifyContent="center"
+              sx={{ height: "100%" }}
+            >
+              <Grid item>
+                <CaptionTypography text="F - SERIES" fontSize="16px" />
+              </Grid>
+              <Grid item sx={{ width: "350px", mb: "16px", mt: "8px" }}>
+                <CaptionTypography
+                  text="WASSP Multibeam finds fish and habitat over a wider area than single-beam systems."
+                  fontSize="16px"
+                />
+              </Grid>
+              <Grid item>
+                <Link
+                  href="#"
+                  color="inherit"
+                  variant="subtitle1"
+                  sx={{ fontSize: "16px" }}
+                >
+                  Explore Now
+                </Link>
+              </Grid>
+            </Grid>
+          </Grid>
+        </Grid>
+      </Grid>
 
       {/* Features */}
       <Box
