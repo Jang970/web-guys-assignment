@@ -11,6 +11,7 @@ import {
 import Navbar from "./components/Navbar";
 import CustomButton from "./components/CustomButton";
 import Image from "next/image";
+import FeaturesSection from "./components/FeaturesSection";
 
 export default function Home() {
   return (
@@ -338,14 +339,39 @@ export default function Home() {
       </Grid>
 
       {/* Features */}
-      <Box
+      <Grid
+        container
+        direction="column"
+        justifyContent="center"
+        alignContent="center"
         sx={{
           height: "100vh",
           background: "linear-gradient(180deg, #04192B 0%, #000719 100%)",
           margin: 0,
           padding: 0,
+          px: "30px",
+          position: "relative",
         }}
-      ></Box>
+      >
+        {/** background layers image */}
+        <Box
+          sx={{
+            position: "absolute",
+            width: { xs: "800px", md: "600px" },
+            left: "350px",
+            top: "425px",
+          }}
+        >
+          <Image
+            src="/images/Layers2.svg"
+            alt="background-image"
+            width={1000}
+            height={1000}
+            layout="responsive"
+          />
+        </Box>
+        <FeaturesSection />
+      </Grid>
 
       {/* Testimonials */}
       <Box
