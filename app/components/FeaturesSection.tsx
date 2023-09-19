@@ -1,4 +1,5 @@
 import { Button, ButtonProps, Grid, Typography } from "@mui/material";
+import Image from "next/image";
 import React, { useState } from "react";
 
 interface ButtonInformation {
@@ -98,7 +99,7 @@ const FeaturesSection = () => {
 
   return (
     <>
-      <Grid item sx={{ width: "100%" }}>
+      <Grid item sx={{ width: "100%", mt: "190px" }}>
         {/** Features title and Feature Buttons */}
         <Grid item container justifyContent="flex-start">
           <Grid item>
@@ -167,8 +168,150 @@ const FeaturesSection = () => {
         </Grid>
       </Grid>
 
-      {/** Seabots Hemisphere banner thing */}
-      <Grid item></Grid>
+      <Grid
+        item
+        sx={{
+          height: "150px",
+          mt: "450px",
+          position: "relative",
+          borderImage:
+            "linear-gradient(to right, #000719, white 5%, white 95%, #000719) 1",
+          borderStyle: "solid",
+          borderWidth: "1px 0",
+          "&::before": {
+            content: '""',
+            position: "absolute",
+            top: 0,
+            left: 0,
+            bottom: 0,
+            width: "30px", // adjust this width as per requirement
+            background: "linear-gradient(to right, #010C1E, transparent)",
+          },
+          "&::after": {
+            content: '""',
+            position: "absolute",
+            top: 0,
+            right: 0,
+            bottom: 0,
+            width: "30px", // adjust this width as per requirement
+            background: "linear-gradient(to left, #010C1E, transparent)",
+          },
+        }}
+      >
+        <Grid
+          item
+          container
+          justifyContent="space-between"
+          alignItems="center"
+          sx={{ height: "100%" }}
+        >
+          {/** Turn item into component? into component */}
+          <Grid item>
+            <Grid item container alignItems="center">
+              <Grid item>
+                <div
+                  style={{
+                    overflow: "hidden",
+                    width: "250px",
+                    whiteSpace: "nowrap",
+                  }}
+                >
+                  <Typography
+                    variant="h3"
+                    fontSize={60}
+                    style={{ marginLeft: "-170px" }}
+                  >
+                    SBG SYSTEMS
+                  </Typography>
+                </div>
+              </Grid>
+
+              <Grid item sx={{ mx: "32px" }}>
+                <Button
+                  color="inherit"
+                  variant="outlined"
+                  sx={{ borderRadius: "50px", width: "120px" }}
+                >
+                  <Image
+                    src="/images/SBGSystems.svg"
+                    alt="button-img-SBGSystems"
+                    width={50}
+                    height={25}
+                  />
+                </Button>
+              </Grid>
+            </Grid>
+          </Grid>
+          <Grid item>
+            <Grid item container alignItems="center">
+              <Grid item>
+                <Typography variant="h3" fontSize={60}>
+                  GPA SEABOTS
+                </Typography>
+              </Grid>
+              <Grid item sx={{ mx: "32px" }}>
+                <Button
+                  color="inherit"
+                  variant="outlined"
+                  sx={{ borderRadius: "50px", width: "120px" }}
+                >
+                  <Image
+                    src="/images/Seabots.svg"
+                    alt="button-img-seabots"
+                    width={50}
+                    height={25}
+                  />
+                </Button>
+              </Grid>
+            </Grid>
+          </Grid>
+          <Grid item>
+            <Grid item container alignItems="center">
+              <Grid item>
+                <Typography variant="h3" fontSize={60}>
+                  HEMISPHERE
+                </Typography>
+              </Grid>
+              <Grid item sx={{ mx: "32px" }}>
+                <Button
+                  color="inherit"
+                  variant="outlined"
+                  sx={{ borderRadius: "50px", width: "120px" }}
+                >
+                  <Image
+                    src="/images/Hemisphere.svg"
+                    alt="button-img-Hemisphere"
+                    width={50}
+                    height={25}
+                  />
+                </Button>
+              </Grid>
+            </Grid>
+          </Grid>
+
+          <Grid item>
+            <Grid item container alignItems="center">
+              <Grid item>
+                <div
+                  style={{
+                    overflow: "hidden",
+                    width: "100px",
+                    whiteSpace: "nowrap",
+                  }}
+                >
+                  <Typography
+                    variant="h3"
+                    fontSize={60}
+                    style={{ marginLeft: "52px" }}
+                  >
+                    FUN
+                  </Typography>
+                </div>
+              </Grid>
+            </Grid>
+          </Grid>
+        </Grid>
+      </Grid>
     </>
   );
 };

@@ -342,10 +342,9 @@ export default function Home() {
       <Grid
         container
         direction="column"
-        justifyContent="center"
         alignContent="center"
         sx={{
-          height: "100vh",
+          height: "200vh",
           background: "linear-gradient(180deg, #04192B 0%, #000719 100%)",
           margin: 0,
           padding: 0,
