@@ -7,11 +7,13 @@ import {
   LinearProgress,
   Typography,
   Link,
+  Card,
 } from "@mui/material";
 import Navbar from "./components/Navbar";
 import CustomButton from "./components/CustomButton";
 import Image from "next/image";
 import FeaturesSection from "./components/FeaturesSection";
+import ImageCard from "./components/ImageCard";
 
 export default function Home() {
   return (
@@ -463,14 +465,56 @@ export default function Home() {
       </Grid>
 
       {/* Latest News */}
-      <Box
+      <Grid
+        container
+        direction="column"
         sx={{
           height: "100vh",
           background: "#000719",
           margin: 0,
           padding: 0,
         }}
-      ></Box>
+      >
+        <Grid item sx={{ backgroundColor: "red" }} flexGrow={3}>
+          <Grid item container sx={{ height: "100%" }}>
+            <Grid item sx={{ backgroundColor: "blue" }} flexGrow={9}>
+              {/** Latest News & Number */}
+              <Grid item container>
+                <Grid item>05</Grid>
+                <Grid item>LATEST NEWS</Grid>
+              </Grid>
+            </Grid>
+            <Grid
+              item
+              sx={{
+                backgroundColor: "gray",
+              }}
+            >
+              {/** Image Scroll menu */}
+              <Grid
+                item
+                container
+                sx={{
+                  backgroundColor: "greenyellow",
+                }}
+              >
+                <Grid item>
+                  <ImageCard />
+                </Grid>
+                <Grid item>
+                  <ImageCard />
+                </Grid>
+                <Grid item>
+                  <ImageCard />
+                </Grid>
+              </Grid>
+            </Grid>
+          </Grid>
+        </Grid>
+        <Grid item sx={{ backgroundColor: "green" }} flexGrow={1}>
+          Image Banner Goes Here
+        </Grid>
+      </Grid>
 
       {/* Contacts */}
       <Box
