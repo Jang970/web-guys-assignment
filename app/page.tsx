@@ -15,7 +15,7 @@ import FeaturesSection from "./components/FeaturesSection";
 
 export default function Home() {
   return (
-    <main className={styles.main}>
+    <main className={styles.main} style={{ overflowX: "hidden" }}>
       {/* Landing Page */}
       <Grid
         container
@@ -344,21 +344,22 @@ export default function Home() {
         direction="column"
         alignContent="center"
         sx={{
-          height: "200vh",
+          height: { xs: "150vh", md: "160vh" },
           background: "linear-gradient(180deg, #04192B 0%, #000719 100%)",
           margin: 0,
-          padding: 0,
+          padding: "120px",
           px: "30px",
           position: "relative",
+          overflowX: "hidden",
         }}
       >
         {/** background layers image */}
         <Box
           sx={{
             position: "absolute",
-            width: { xs: "800px", md: "600px" },
-            left: "350px",
-            top: "425px",
+            width: { xs: "95vw", md: "600px" },
+            left: { xs: "10px", md: "350px" },
+            top: "550px",
           }}
         >
           <Image
@@ -369,18 +370,97 @@ export default function Home() {
             layout="responsive"
           />
         </Box>
+
         <FeaturesSection />
       </Grid>
 
       {/* Testimonials */}
-      <Box
+      <Grid
+        container
+        direction="column"
         sx={{
           height: "100vh",
           background: "#000719",
           margin: 0,
           padding: 0,
         }}
-      ></Box>
+      >
+        {/** TODO: Moving background? */}
+        <Grid
+          container
+          item
+          justifyContent="center"
+          direction={{ xs: "column", md: "row" }}
+          sx={{ height: "100%" }}
+        >
+          <Grid
+            item
+            sx={{ height: { xs: "0%", md: "33%" } }}
+            flexGrow={{ xs: 1, md: 3 }}
+          >
+            <Grid item container alignItems="flex-end" sx={{ height: "100%" }}>
+              <Grid
+                item
+                sx={{
+                  pl: "15px",
+                  pr: { xs: "64px", md: "124px" },
+                }}
+              >
+                <Typography variant="subtitle2">04</Typography>
+              </Grid>
+              <Grid item>
+                <Typography variant="subtitle2">TESTIMONIALS</Typography>
+              </Grid>
+            </Grid>
+          </Grid>
+          <Grid item flexGrow={{ xs: 5, md: 2 }}>
+            <Grid
+              item
+              container
+              direction="column"
+              justifyContent={{ xs: "flex-start", md: "center" }}
+              sx={{
+                height: "100%",
+                pl: { xs: "15px", md: "0px" },
+                pt: { xs: "32px", md: "0px" },
+              }}
+            >
+              <Grid
+                item
+                sx={{
+                  width: { xs: "350px", md: "1100px" },
+                }}
+              >
+                <Hidden mdDown>
+                  <Typography variant="h3" fontSize={60}>
+                    “WASSP LETS ME GO TO WHERE I WOULD NEVER HAVE FISHED BEFORE,
+                    GIVING ME A HIGHER CATCH WITH REDUCED FUEL CONSUMPTION.”
+                  </Typography>
+                </Hidden>
+                <Hidden mdUp>
+                  <Typography variant="h3" fontSize={30}>
+                    WASSP LETS ME GO TO WHERE I WOULD NEVER HAVE FISHED BEFORE,
+                    GIVING ME A HIGHER VALUE CATCH, WITH REDUCED FUEL
+                    CONSUMPTION.”
+                  </Typography>
+                </Hidden>
+              </Grid>
+              <Grid item>
+                <Typography
+                  variant="subtitle2"
+                  sx={{
+                    fontSize: { xs: "14px", md: "16px" },
+                    width: "170px",
+                    mt: "30px",
+                  }}
+                >
+                  Dominique Faou Owner/Skipper, France
+                </Typography>
+              </Grid>
+            </Grid>
+          </Grid>
+        </Grid>
+      </Grid>
 
       {/* Latest News */}
       <Box

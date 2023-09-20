@@ -1,4 +1,6 @@
-import { Button, ButtonProps, Grid, Typography } from "@mui/material";
+"use client";
+
+import { Button, ButtonProps, Grid, Hidden, Typography } from "@mui/material";
 import Image from "next/image";
 import React, { useState } from "react";
 
@@ -99,23 +101,56 @@ const FeaturesSection = () => {
 
   return (
     <>
-      <Grid item sx={{ width: "100%", mt: "190px" }}>
+      <Grid
+        item
+        sx={{
+          width: { xs: "100vw", md: "100%" },
+          mt: "190px",
+        }}
+      >
         {/** Features title and Feature Buttons */}
-        <Grid item container justifyContent="flex-start">
-          <Grid item>
+        <Grid
+          item
+          container
+          justifyContent="flex-start"
+          direction={{ md: "column", lg: "row" }}
+        >
+          <Grid item sx={{ ml: { xs: "15px", md: "0px" } }}>
             <Typography variant="subtitle2" fontSize={14} fontWeight={400}>
               03
             </Typography>
           </Grid>
           {/** Changes to 'our capabilities */}
-          <Grid item marginLeft={16} marginRight={48}>
-            <Typography variant="subtitle2" fontSize={14} fontWeight={400}>
-              FEATURES
-            </Typography>
+          <Grid
+            item
+            sx={{
+              ml: { xs: "64px", md: "124px" },
+              mr: { xs: "0px", md: "390px" },
+              mb: { xs: "24px", md: "0px" },
+            }}
+          >
+            <Hidden mdDown>
+              <Typography variant="subtitle2" fontSize={14} fontWeight={400}>
+                FEATURES
+              </Typography>
+            </Hidden>
+            <Hidden mdUp>
+              <Typography variant="subtitle2" fontSize={14} fontWeight={400}>
+                OUR CAPABILITIES
+              </Typography>
+            </Hidden>
           </Grid>
 
           {/** Buttons go here */}
-          <Grid item width={900}>
+          <Grid
+            item
+            sx={{
+              width: { xs: "100vw", md: "900px" },
+              overflowX: { xs: "auto", md: "initial" },
+              whiteSpace: { xs: "nowrap", md: "normal" },
+              ml: { xs: "15px", lg: "0px" },
+            }}
+          >
             {buttonData.map((feature, idx) => (
               <Button
                 key={idx}
@@ -127,7 +162,7 @@ const FeaturesSection = () => {
                 }
                 variant="outlined"
               >
-                <Grid container columnSpacing={2}>
+                <Grid container columnSpacing={2} alignItems="center">
                   <Grid item>
                     <Typography variant="subtitle2" sx={{ fontWeight: "600" }}>
                       {idx < 10 ? "0" : ""}
@@ -135,7 +170,12 @@ const FeaturesSection = () => {
                     </Typography>
                   </Grid>
                   <Grid item>
-                    <Typography variant="subtitle2">{feature.title}</Typography>
+                    <Typography
+                      variant="subtitle2"
+                      sx={{ fontSize: { xs: "12px", md: "14px" } }}
+                    >
+                      {feature.title}
+                    </Typography>
                   </Grid>
                 </Grid>
               </Button>
@@ -144,8 +184,16 @@ const FeaturesSection = () => {
         </Grid>
       </Grid>
 
-      <Grid item sx={{ ml: "600px", mt: "30px", zIndex: "1" }}>
-        <Grid item container direction="column" sx={{ width: "100%" }}>
+      <Grid
+        item
+        sx={{ mx: { xs: "15px", lg: "600px" }, mt: "30px", zIndex: "1" }}
+      >
+        <Grid
+          item
+          container
+          direction="column"
+          sx={{ width: { xs: "90vw", md: "100%" } }}
+        >
           {/** Current button number */}
           <Grid item>
             <Typography variant="h3" fontSize={24}>
@@ -154,14 +202,18 @@ const FeaturesSection = () => {
             </Typography>
           </Grid>
           {/** Current button associated title */}
-          <Grid item width={635} sx={{ mt: "32px", mb: "8px" }}>
-            <Typography variant="h3" fontSize={60}>
+          <Grid
+            item
+            width={{ xs: 350, md: 635 }}
+            sx={{ mt: "32px", mb: "8px" }}
+          >
+            <Typography variant="h3" fontSize={{ md: 30, lg: 60 }}>
               {selectedFeature ? selectedFeature.title : ""}
             </Typography>
           </Grid>
           {/** Current button associated description */}
-          <Grid item width={700}>
-            <Typography variant="subtitle2" fontSize={16}>
+          <Grid item sx={{ width: { xs: "350px", md: "700px" } }}>
+            <Typography variant="subtitle2" fontSize={{ md: 14, lg: 16 }}>
               {selectedFeature ? selectedFeature.description : ""}
             </Typography>
           </Grid>
@@ -171,8 +223,8 @@ const FeaturesSection = () => {
       <Grid
         item
         sx={{
-          height: "150px",
-          mt: "450px",
+          height: "100px",
+          mt: { xs: "220px", lg: "450px" },
           position: "relative",
           borderImage:
             "linear-gradient(to right, #000719, white 5%, white 95%, #000719) 1",
@@ -184,8 +236,8 @@ const FeaturesSection = () => {
             top: 0,
             left: 0,
             bottom: 0,
-            width: "30px", // adjust this width as per requirement
-            background: "linear-gradient(to right, #010C1E, transparent)",
+            width: "30px",
+            background: "linear-gradient(to right, #021123, transparent)",
           },
           "&::after": {
             content: '""',
@@ -193,44 +245,49 @@ const FeaturesSection = () => {
             top: 0,
             right: 0,
             bottom: 0,
-            width: "30px", // adjust this width as per requirement
-            background: "linear-gradient(to left, #010C1E, transparent)",
+            width: "30px",
+            background: "linear-gradient(to left, #021123, transparent)",
           },
         }}
       >
+        {/** Banner thing */}
         <Grid
           item
           container
-          justifyContent="space-between"
+          justifyContent={{ xs: "flex-start", lg: "space-between" }}
           alignItems="center"
           sx={{ height: "100%" }}
         >
-          {/** Turn item into component? into component */}
           <Grid item>
             <Grid item container alignItems="center">
-              <Grid item>
-                <div
-                  style={{
-                    overflow: "hidden",
-                    width: "250px",
-                    whiteSpace: "nowrap",
-                  }}
-                >
-                  <Typography
-                    variant="h3"
-                    fontSize={60}
-                    style={{ marginLeft: "-170px" }}
+              <Hidden lgDown>
+                <Grid item>
+                  <div
+                    style={{
+                      overflow: "hidden",
+                      width: "250px",
+                      whiteSpace: "nowrap",
+                    }}
                   >
-                    SBG SYSTEMS
-                  </Typography>
-                </div>
-              </Grid>
+                    <Typography
+                      variant="h3"
+                      fontSize={60}
+                      style={{ marginLeft: "-170px" }}
+                    >
+                      SBG SYSTEMS
+                    </Typography>
+                  </div>
+                </Grid>
+              </Hidden>
 
-              <Grid item sx={{ mx: "32px" }}>
+              <Grid item sx={{ mx: { xs: "8px", lg: "32px" } }}>
                 <Button
                   color="inherit"
                   variant="outlined"
-                  sx={{ borderRadius: "50px", width: "120px" }}
+                  sx={{
+                    borderRadius: "50px",
+                    width: { xs: "80px", lg: "120px" },
+                  }}
                 >
                   <Image
                     src="/images/SBGSystems.svg"
@@ -245,15 +302,18 @@ const FeaturesSection = () => {
           <Grid item>
             <Grid item container alignItems="center">
               <Grid item>
-                <Typography variant="h3" fontSize={60}>
+                <Typography variant="h3" fontSize={{ xs: 24, lg: 60 }}>
                   GPA SEABOTS
                 </Typography>
               </Grid>
-              <Grid item sx={{ mx: "32px" }}>
+              <Grid item sx={{ mx: { xs: "8px", lg: "32px" } }}>
                 <Button
                   color="inherit"
                   variant="outlined"
-                  sx={{ borderRadius: "50px", width: "120px" }}
+                  sx={{
+                    borderRadius: "50px",
+                    width: { xs: "80px", lg: "120px" },
+                  }}
                 >
                   <Image
                     src="/images/Seabots.svg"
@@ -267,47 +327,55 @@ const FeaturesSection = () => {
           </Grid>
           <Grid item>
             <Grid item container alignItems="center">
-              <Grid item>
-                <Typography variant="h3" fontSize={60}>
-                  HEMISPHERE
-                </Typography>
-              </Grid>
-              <Grid item sx={{ mx: "32px" }}>
-                <Button
-                  color="inherit"
-                  variant="outlined"
-                  sx={{ borderRadius: "50px", width: "120px" }}
-                >
-                  <Image
-                    src="/images/Hemisphere.svg"
-                    alt="button-img-Hemisphere"
-                    width={50}
-                    height={25}
-                  />
-                </Button>
-              </Grid>
+              <Hidden mdUp>
+                <Grid item sx={{ width: "40px" }}>
+                  <Typography variant="h3" fontSize={24}>
+                    HE
+                  </Typography>
+                </Grid>
+              </Hidden>
+
+              <Hidden lgDown>
+                <Grid item>
+                  <Typography variant="h3" fontSize={60}>
+                    HEMISPHERE
+                  </Typography>
+                </Grid>
+                <Grid item sx={{ mx: "32px" }}>
+                  <Button
+                    color="inherit"
+                    variant="outlined"
+                    sx={{ borderRadius: "50px", width: "120px" }}
+                  >
+                    <Image
+                      src="/images/Hemisphere.svg"
+                      alt="button-img-Hemisphere"
+                      width={50}
+                      height={25}
+                    />
+                  </Button>
+                </Grid>
+              </Hidden>
             </Grid>
           </Grid>
 
           <Grid item>
             <Grid item container alignItems="center">
-              <Grid item>
-                <div
-                  style={{
-                    overflow: "hidden",
-                    width: "100px",
-                    whiteSpace: "nowrap",
-                  }}
-                >
-                  <Typography
-                    variant="h3"
-                    fontSize={60}
-                    style={{ marginLeft: "52px" }}
+              <Hidden lgDown>
+                <Grid item>
+                  <div
+                    style={{
+                      overflow: "hidden",
+                      width: "100px",
+                      whiteSpace: "nowrap",
+                    }}
                   >
-                    FUN
-                  </Typography>
-                </div>
-              </Grid>
+                    <Typography variant="h3" fontSize={60} sx={{ ml: "52px" }}>
+                      FUN
+                    </Typography>
+                  </div>
+                </Grid>
+              </Hidden>
             </Grid>
           </Grid>
         </Grid>
