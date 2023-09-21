@@ -2,9 +2,9 @@
 
 import { Grid, GridProps, Hidden, Typography } from "@mui/material";
 import React from "react";
-import ImageCard from "./ImageCard";
-import ImageBanner from "./ImageBanner";
-import PageIdentifier from "./PageIdentifier";
+import ImageCard from "../ImageCard";
+import ImageBanner from "../ImageBanner";
+import PageIdentifier from "../PageIdentifier";
 
 interface ImageInformation {
   src: string;

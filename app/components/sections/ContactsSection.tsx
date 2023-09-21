@@ -1,6 +1,6 @@
 import { Button, Grid, Hidden, Typography } from "@mui/material";
 import React from "react";
-import CustomButton from "./CustomButton";
+import CustomButton from "../CustomButton";
 
 const links = [
   "Products",

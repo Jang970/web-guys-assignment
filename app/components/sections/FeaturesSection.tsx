@@ -227,7 +227,7 @@ const FeaturesSection = () => {
           mt: { xs: "220px", lg: "450px" },
           position: "relative",
           borderImage:
-            "linear-gradient(to right, #000719, white 5%, white 95%, #000719) 1",
+            "linear-gradient(to right, #000719, white 15%, white 85%, #000719) 1",
           borderStyle: "solid",
           borderWidth: "1px 0",
           "&::before": {
@@ -236,7 +236,7 @@ const FeaturesSection = () => {
             top: 0,
             left: 0,
             bottom: 0,
-            width: "30px",
+            width: "200px",
             background: "linear-gradient(to right, #021123, transparent)",
           },
           "&::after": {
@@ -245,7 +245,7 @@ const FeaturesSection = () => {
             top: 0,
             right: 0,
             bottom: 0,
-            width: "30px",
+            width: "200px",
             background: "linear-gradient(to left, #021123, transparent)",
           },
         }}
@@ -254,9 +254,9 @@ const FeaturesSection = () => {
         <Grid
           item
           container
-          justifyContent={{ xs: "flex-start", lg: "space-between" }}
+          justifyContent={{ xs: "flex-start", lg: "center" }}
           alignItems="center"
-          sx={{ height: "100%" }}
+          sx={{ height: "100%", width: "100%" }}
         >
           <Grid item>
             <Grid item container alignItems="center">
