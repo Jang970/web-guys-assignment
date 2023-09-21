@@ -7,13 +7,13 @@ import {
   LinearProgress,
   Typography,
   Link,
-  Card,
 } from "@mui/material";
 import Navbar from "./components/Navbar";
 import CustomButton from "./components/CustomButton";
 import Image from "next/image";
 import FeaturesSection from "./components/FeaturesSection";
-import ImageCard from "./components/ImageCard";
+import LatestNewsSection from "./components/LatestNewsSection";
+import PageIdentifier from "./components/PageIdentifier";
 
 export default function Home() {
   return (
@@ -401,18 +401,7 @@ export default function Home() {
             flexGrow={{ xs: 1, md: 3 }}
           >
             <Grid item container alignItems="flex-end" sx={{ height: "100%" }}>
-              <Grid
-                item
-                sx={{
-                  pl: "15px",
-                  pr: { xs: "64px", md: "124px" },
-                }}
-              >
-                <Typography variant="subtitle2">04</Typography>
-              </Grid>
-              <Grid item>
-                <Typography variant="subtitle2">TESTIMONIALS</Typography>
-              </Grid>
+              <PageIdentifier pageNumber="04" pageTitle="TESTIMONIALS" />
             </Grid>
           </Grid>
           <Grid item flexGrow={{ xs: 5, md: 2 }}>
@@ -473,47 +462,10 @@ export default function Home() {
           background: "#000719",
           margin: 0,
           padding: 0,
+          pt: { xs: "0px", md: "60px" },
         }}
       >
-        <Grid item sx={{ backgroundColor: "red" }} flexGrow={3}>
-          <Grid item container sx={{ height: "100%" }}>
-            <Grid item sx={{ backgroundColor: "blue" }} flexGrow={9}>
-              {/** Latest News & Number */}
-              <Grid item container>
-                <Grid item>05</Grid>
-                <Grid item>LATEST NEWS</Grid>
-              </Grid>
-            </Grid>
-            <Grid
-              item
-              sx={{
-                backgroundColor: "gray",
-              }}
-            >
-              {/** Image Scroll menu */}
-              <Grid
-                item
-                container
-                sx={{
-                  backgroundColor: "greenyellow",
-                }}
-              >
-                <Grid item>
-                  <ImageCard />
-                </Grid>
-                <Grid item>
-                  <ImageCard />
-                </Grid>
-                <Grid item>
-                  <ImageCard />
-                </Grid>
-              </Grid>
-            </Grid>
-          </Grid>
-        </Grid>
-        <Grid item sx={{ backgroundColor: "green" }} flexGrow={1}>
-          Image Banner Goes Here
-        </Grid>
+        <LatestNewsSection />
       </Grid>
 
       {/* Contacts */}
