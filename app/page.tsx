@@ -7,6 +7,7 @@ import {
   LinearProgress,
   Typography,
   Link,
+  Button,
 } from "@mui/material";
 import Navbar from "./components/Navbar";
 import CustomButton from "./components/CustomButton";
@@ -14,6 +15,7 @@ import Image from "next/image";
 import FeaturesSection from "./components/FeaturesSection";
 import LatestNewsSection from "./components/LatestNewsSection";
 import PageIdentifier from "./components/PageIdentifier";
+import ContactsSection from "./components/ContactsSection";
 
 export default function Home() {
   return (
@@ -346,7 +348,7 @@ export default function Home() {
         direction="column"
         alignContent="center"
         sx={{
-          height: { xs: "150vh", md: "160vh" },
+          height: { xs: "150vh", md: "200vh" },
           background: "linear-gradient(180deg, #04192B 0%, #000719 100%)",
           margin: 0,
           padding: "120px",
@@ -469,14 +471,39 @@ export default function Home() {
       </Grid>
 
       {/* Contacts */}
-      <Box
+      <Grid
+        container
+        direction={{ xs: "column", md: "row" }}
         sx={{
           height: "100vh",
           background: "#000719",
           margin: 0,
           padding: 0,
+          pt: { xs: "0px", md: "120px" },
+          pb: "160px",
+          position: "relative",
         }}
-      ></Box>
+      >
+        {/** background LOGO */}
+        <Box
+          sx={{
+            position: "absolute",
+            bottom: { xs: "200px", md: "-60px" },
+            left: "50%",
+            transform: "translate(-50%, -50%)",
+            width: { xs: "90vw", md: "85vw" },
+          }}
+        >
+          <Image
+            src="/images/WasspMultibeam.svg"
+            alt="background-image"
+            width={1000}
+            height={1000}
+            layout="responsive"
+          />
+        </Box>
+        <ContactsSection />
+      </Grid>
     </main>
   );
 }
