@@ -477,11 +477,11 @@ export default function Home() {
         sx={{
           height: "100vh",
           background: "#000719",
+          position: "relative",
           margin: 0,
           padding: 0,
           pt: { xs: "0px", md: "120px" },
           pb: "160px",
-          position: "relative",
         }}
       >
         {/** background LOGO */}
